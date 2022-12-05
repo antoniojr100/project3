@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { useState, useEffect } from 'react';
 import Header from './Header.js';
 import './App.css';
@@ -15,14 +14,14 @@ function App() {
     fetch(`https://swapi.py4e.com/api/films/`)
       .then( res => res.json() )
       .then ((jsonRes) => {
-        const remove7 = jsonRes.results.pop();
+        jsonRes.results.pop();
         setMovies(jsonRes.results);
       })
   }, []);
 
   const episodeClick = (e) =>{
     e.preventDefault();
-
+    setSelectedEpisode(e.target.value);
   }
 
   return (
@@ -35,17 +34,17 @@ function App() {
         <section className="movieList">
           <div className="wrapper">
             {/* Buttons */}
-            <ul onClick={(e) => {console.log(e.target.value)}}>
+            <ul>
               {
                 movies.map((movie) =>{
                   return(
                     <li value={movie.episode_id}>
-                      <button value={movie.episode_id} className={movie.episode_id}>
-                        {movie.title}
-                      </button>
-                      {/* <button value={movie.episode_id}>
-                        <h3>EPISODE {movie.episode_id}</h3>
-                      </button> */}
+                        <button 
+                          value={movie.episode_id}
+                          onClick={episodeClick}
+                          >
+                            Episode {movie.episode_id} | {movie.title}
+                        </button>
                     </li>
                   )
                 })
@@ -58,7 +57,7 @@ function App() {
         {/* Selected Movie starts */}
         <section className="selectedEpisode">
           <div className="wrapper">
-
+              <p>{selectedEpisode}</p>
           </div>
         </section>
         {/* Selected Movie ends */}

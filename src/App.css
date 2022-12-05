@@ -44,8 +44,10 @@ ul{
 }
 
 .movieList li{
+  background-color: yellow;
+  border-radius: 35px;
   width: calc((100% / 3) - 50px);
-  padding: 0;
+  padding: 10px;
   margin: 20px 25px;
   display: flex;
   justify-content: center;
@@ -54,8 +56,12 @@ ul{
 .movieList li button{
   background-color: yellow;
   border: none;
-  border-radius: 35px;
+  /* border-radius: 35px; */
   padding: 10px;
+}
+
+.selectedEpisode p{
+  color: yellow;
 }
 
 @media (max-width: 701px){
