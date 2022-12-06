@@ -43,7 +43,17 @@ ul{
   width: 100%;
 }
 
-.movieList li{
+.buttonsContainer{
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonsContainer button{
   background-color: yellow;
   border-radius: 35px;
   width: calc((100% / 3) - 50px);
@@ -52,14 +62,7 @@ ul{
   display: flex;
   justify-content: center;
 }
-
-.movieList li button{
-  background-color: yellow;
-  border: none;
-  /* border-radius: 35px; */
-  padding: 10px;
-}
-
+.displayedMovie,
 .selectedEpisode p{
   color: yellow;
 }
@@ -69,3 +72,4 @@ ul{
     flex-direction: column;
   }
 }
+
