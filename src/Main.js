@@ -19,45 +19,84 @@ const Main = (props) => {
   const episodeClick = (e) =>{
     e.preventDefault();
     if(e.target.value !== '0' && e.target.value !== ''){
+      // getMovie(e.target.value);
       setSelectedEpisode(e.target.value);
-      settingUpMovie(selectedEpisode);
-      console.log(e.target.value)
+      console.log(`Selected Episode: ${selectedEpisode}`)
+      console.log(`E.target.value: ${e.target.value}`)
+      console.log('================')
     }
+
+      const movie1 = movies[3]
+      const movie2 = movies[4]
+      const movie3 = movies[5]
+      const movie4 = movies[0]
+      const movie5 = movies[1]
+      const movie6 = movies[2]
+  
+      if(e.target.value === '1'){
+        setMovieObj(movie1)
+        // console.log(movieObj)
+      }
+      else if(e.target.value === '2'){
+        setMovieObj(movie2)
+        // console.log(movieObj)
+      }
+      else if(e.target.value === '3'){
+        setMovieObj(movie3)
+        // console.log(movieObj)
+      }
+      else if(e.target.value === '4'){
+        setMovieObj(movie4)
+        // console.log(movieObj)
+      }
+      else if(e.target.value === '5'){
+        setMovieObj(movie5)
+        // console.log(movieObj)
+      }
+      else if(e.target.value === '6'){
+        setMovieObj(movie6)
+        // console.log(movieObj)
+      }
   }
 
-  const settingUpMovie = (num) => {
-    const movie1 = movies[3]
-    const movie2 = movies[4]
-    const movie3 = movies[5]
-    const movie4 = movies[0]
-    const movie5 = movies[1]
-    const movie6 = movies[2]
 
-    if(num === '1'){
-      setMovieObj(movie1)
-      console.log(movieObj)
-    }
-    else if(num === '2'){
-      setMovieObj(movie2)
-      console.log(movieObj)
-    }
-    else if(num === '3'){
-      setMovieObj(movie3)
-      console.log(movieObj)
-    }
-    else if(num === '4'){
-      setMovieObj(movie4)
-      console.log(movieObj)
-    }
-    else if(num === '5'){
-      setMovieObj(movie5)
-      console.log(movieObj)
-    }
-    else if(num === '6'){
-      setMovieObj(movie6)
-      console.log(movieObj)
-    }
-  }
+
+
+  
+
+  // const getMovie = (num) => {
+  //   const movie1 = movies[3]
+  //   const movie2 = movies[4]
+  //   const movie3 = movies[5]
+  //   const movie4 = movies[0]
+  //   const movie5 = movies[1]
+  //   const movie6 = movies[2]
+
+  //   if(num === '1'){
+  //     setMovieObj(movie1)
+  //     // console.log(movieObj)
+  //   }
+  //   else if(num === '2'){
+  //     setMovieObj(movie2)
+  //     // console.log(movieObj)
+  //   }
+  //   else if(num === '3'){
+  //     setMovieObj(movie3)
+  //     // console.log(movieObj)
+  //   }
+  //   else if(num === '4'){
+  //     setMovieObj(movie4)
+  //     // console.log(movieObj)
+  //   }
+  //   else if(num === '5'){
+  //     setMovieObj(movie5)
+  //     // console.log(movieObj)
+  //   }
+  //   else if(num === '6'){
+  //     setMovieObj(movie6)
+  //     // console.log(movieObj)
+  //   }
+  // }
 
 
   return(
@@ -69,6 +108,7 @@ const Main = (props) => {
             movies.map((movie) =>{
               return(
                 <button 
+                  key={movie.title}
                   value={movie.episode_id}
                   onClick={episodeClick}
                   >
