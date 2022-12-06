@@ -21,7 +21,37 @@ function App() {
 
   const episodeClick = (e) =>{
     e.preventDefault();
-    setSelectedEpisode(e.target.value);
+    if(e.target.value !== 0){
+      setSelectedEpisode(e.target.value);
+      console.log(selectedEpisode)
+      settingUpMovie()
+    }
+  }
+
+  const settingUpMovie = () => {
+    if(selectedEpisode === 1){
+      console.log(movies[3])
+    }
+    // Episode 2 = movies[4]
+    if(selectedEpisode === 2){
+      console.log(movies[4])
+    }
+    // Episode 3 = movies[5]
+    if(selectedEpisode === 3){
+      console.log(movies[5])
+    }
+    // Episode 4 = movies[0]
+    if(selectedEpisode === 4){
+      console.log(movies[0])
+    }
+    // Episode 5 = movies[1]
+    if(selectedEpisode === 5){
+      console.log(movies[1])
+    }
+    // Episode 6 = movies[2]
+    if(selectedEpisode === 6){
+      console.log(movies[2])
+    }
   }
 
   return (
@@ -38,13 +68,16 @@ function App() {
               {
                 movies.map((movie) =>{
                   return(
-                    <li value={movie.episode_id}>
-                        <button 
+                    <li 
+                      value={movie.episode_id}
+                      onClick={episodeClick}
+                      >
+                        {/* <button 
                           value={movie.episode_id}
                           onClick={episodeClick}
-                          >
+                          > */}
                             Episode {movie.episode_id} | {movie.title}
-                        </button>
+                        {/* </button> */}
                     </li>
                   )
                 })
@@ -58,6 +91,10 @@ function App() {
         <section className="selectedEpisode">
           <div className="wrapper">
               <p>{selectedEpisode}</p>
+              {
+                // revenge of the sith
+                // console.log(movies[5])
+              }
           </div>
         </section>
         {/* Selected Movie ends */}
