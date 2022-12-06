@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
 import Header from './Header.js';
 import './App.css';
-// import app from './firebase.js';
-// import { getDatabase, ref, onValue } from 'firebase/database';
 
 function App() {
 
@@ -80,12 +78,7 @@ function App() {
                       value={movie.episode_id}
                       onClick={episodeClick}
                       >
-                        {/* <button 
-                          value={movie.episode_id}
-                          onClick={episodeClick}
-                          > */}
-                            Episode {movie.episode_id} | {movie.title}
-                        {/* </button> */}
+                        Episode {movie.episode_id} | {movie.title}
                     </button>
                   )
                 })
