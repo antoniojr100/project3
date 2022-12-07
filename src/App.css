@@ -19,6 +19,7 @@ html{
   background-image: url(./assets/galaxy.jpg);
 }
 
+/* Typography */
 h1{
   text-align: center;
   font-size: 3.6rem;
@@ -29,20 +30,18 @@ h2{
   font-size: 1rem;
 }
 
-
-ul{
-  margin: 0 auto;
-  padding: 0;
-  list-style-type: none;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  /* border: 1px solid red; */
-  width: 100%;
+.footerText a{
+  text-decoration: none;
 }
 
+.footerText,
+.footerText a,
+.selectedEpisode{
+  color: yellow;
+  text-align: center;
+}
+
+/* Button Section */
 .buttonsContainer{
   margin: 0 auto;
   padding: 0;
@@ -51,6 +50,7 @@ ul{
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  align-content: center;
 }
 
 .buttonsContainer button{
@@ -63,15 +63,33 @@ ul{
   justify-content: center;
 }
 
-footer p,
-.displayedMovie,
-.selectedEpisode p{
-  color: yellow;
+/* Movie Section */
+.movieSection{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
+.posterContainer{
+  width: 30%;
+}
+
+.posterContainer a img{
+  width: 100%;
+}
+
+/* Footer */
+
+
+/* Media Queries */
 @media (max-width: 701px){
-  ul{
+  .buttonsContainer{
     flex-direction: column;
+  }
+
+  .buttonsContainer button{
+    width: 100%;
   }
 }
 
