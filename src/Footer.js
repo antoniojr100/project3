@@ -6,8 +6,10 @@ const Footer = () => {
                 <p className="footerText">
                     <a 
                         href="https://junocollege.com/"
+                        target="_blank" 
+                        rel="noreferrer"
                     >
-                        Created at Juno College
+                        Created at Juno College of Technology
                     </a>
                 </p>
             </div>

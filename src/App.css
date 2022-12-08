@@ -10,35 +10,55 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 
 /* General Styles */
 .wrapper{
-  width: 80%; height: 80%;
+  width: 85%; height: 80%;
   margin: 0 auto;
 }
 
 html{
   font-size: 125%;
   background-image: url(./assets/galaxy.jpg);
+  font-family: 'Hind Madurai', sans-serif;
 }
 
 /* Typography */
+
 h1{
   text-align: center;
-  font-size: 3.6rem;
-  color: yellow;
+  font-size: 4rem;
+  color: gold;
 }
 
 h2{
-  font-size: 1rem;
+  font-size: 2.2rem;
+}
+
+h3{
+  font-size: 1.7rem;
 }
 
 .footerText a{
   text-decoration: none;
 }
 
+.welcomeQuote,
+.welcomeText,
 .footerText,
 .footerText a,
 .selectedEpisode{
-  color: yellow;
+  color: gold;
   text-align: center;
+}
+
+.openingCrawl{
+  line-height: 3rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  /* text-transform: uppercase; */
+}
+
+.welcomeQuote{
+  font-size: 1.3rem;
+  font-style: italic;
 }
 
 /* Button Section */
@@ -54,7 +74,7 @@ h2{
 }
 
 .buttonsContainer button{
-  background-color: yellow;
+  background-color: gold;
   border-radius: 35px;
   width: calc((100% / 3) - 50px);
   min-height: 50px;
@@ -62,6 +82,12 @@ h2{
   margin: 20px 25px;
   display: flex;
   justify-content: center;
+}
+
+button:hover,
+button:active,
+button:focus{
+  background-color: yellow;
 }
 
 .buttonsContainer button p{
@@ -78,7 +104,7 @@ h2{
 }
 
 .posterContainer{
-  width: 30%;
+  width: 35%;
 }
 
 .posterContainer a img{
@@ -86,14 +112,64 @@ h2{
 }
 
 /* Footer */
+.footerText{
+  font-size: 1.1rem;
+}
+
+.footerText a:hover,
+.footerText a:active,
+.footerText a:focus{
+  color: yellow;
+}
 
 /* Media Queries */
+@media(max-width: 1550px){
+  .posterContainer{
+    width: 40%;
+  }
+}
+
+@media(max-width: 1200px){
+  .posterContainer{
+    width: 45%;
+  }
+}
+
 @media (max-width: 1000px){
   .buttonsContainer{
     flex-direction: column;
   }
 
   .buttonsContainer button{
+    width: 100%;
+  }
+
+  .posterContainer{
+    width: 60%;
+  }
+
+}
+
+@media(max-width: 850px){
+  .posterContainer{
+    width: 60%;
+  }
+}
+
+@media(max-width: 750px){
+  .posterContainer{
+    width: 70%;
+  }
+}
+
+@media(max-width: 650px){
+  .posterContainer{
+    width: 80%;
+  }
+}
+
+@media(max-width: 550px){
+  .posterContainer{
     width: 100%;
   }
 }

@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
+import Welcome from './Welcome.js';
 
 const Main = () => {
-  
+
   const [ movies, setMovies] = useState( [] );
   const [ selectedEpisode, setSelectedEpisode ] = useState( '' );
   const [ movieObj, setMovieObj ] = useState( {} );
@@ -71,6 +72,10 @@ const Main = () => {
 
   return(
     <main>
+      <section className="welcome">
+        {/* displays Welcome component if user has not selected a movie */}
+        { !movieObj.episode_id ? <Welcome /> : <p></p>}
+      </section>
       <section className="movieList">
         <div className="wrapper buttonsContainer">
           {/* Buttons */}
@@ -93,16 +98,22 @@ const Main = () => {
             {/* movie info */}
             {/* checks if movieObj is empty  */}
             {movieObj.episode_id ? <h2>Episode: {selectedEpisode} </h2> : <p></p>}
+
             <h2>{movieObj.title}</h2>
             <h3>{movieObj.release_date}</h3>
+            
             {movieObj.episode_id ? <h3>Directed by: {movieObj.director}</h3> : <p></p>}
+            
             <div className="posterContainer">
               <a href={movieHref} target="_blank" rel="noreferrer">
                 {movieObj.episode_id ? <img src={poster} alt={`poster for ${movieObj.title}`}/> : <p></p>}
               </a>
             </div>
+            
             {movieObj.episode_id ? <h3 className="openingCrawlText">Opening Crawl:</h3> : <p></p>}
+            
             <p className="openingCrawl">{movieObj.opening_crawl}</p>
+          
           </div>
         </section>
       </section>
