@@ -1,10 +1,7 @@
-import { useState } from 'react';
 
 const Welcome = (props) => {
-    const [ quotes, setQuotes] = useState([`Hello there! - Obi-Wan Kenobi`, `This is the way - Din "The Mandolorian" Djarin`, `I hate sand - Anakin Skywalker`, `Difficulty to see; always in motion is the future - Yoda`, `*coos* - Grogu (Baby Yoda)`, ])
-
+    const quotes = [`Hello there! - Obi-Wan Kenobi`, `This is the way - Din "The Mandolorian" Djarin`, `I hate sand - Anakin Skywalker`, `Difficulty to see; always in motion is the future - Yoda`, `*coos* - Grogu (Baby Yoda)`, ]; 
     const random = Math.floor(Math.random() * quotes.length) + 1;
-    console.log(quotes[random])
 
     return(
         <div className="wrapper">
