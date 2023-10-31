@@ -10,7 +10,8 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 
 /* General Styles */
 .wrapper{
-  width: 85%; height: 80%;
+  width: 85%; 
+  height: 80%;
   margin: 0 auto;
 }
 
@@ -24,12 +25,12 @@ html{
 
 h1{
   text-align: center;
-  font-size: 4rem;
+  font-size: 4.5rem;
   color: gold;
 }
 
 h2{
-  font-size: 2.2rem;
+  font-size: 2.8rem;
 }
 
 h3{
@@ -114,6 +115,7 @@ button:focus{
 /* Footer */
 .footerText{
   font-size: 1.1rem;
+  margin: 5rem 0 2rem 0;
 }
 
 .footerText a:hover,
