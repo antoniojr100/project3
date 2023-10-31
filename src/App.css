@@ -29,12 +29,28 @@ h1{
   color: gold;
 }
 
-h2{
-  font-size: 2.8rem;
+
+#episodeNumber,
+#title{
+  font-size: 3rem;
 }
 
-h3{
-  font-size: 1.7rem;
+#title{
+  margin: 0 0 2rem 0;
+}
+
+#releaseDate{
+  font-size: 1.75rem;
+  margin: 0.75rem 0;
+}
+
+.directorCreator,
+.premiseTitle{
+  font-size: 2rem;
+}
+
+.directorCreator{
+  margin: 1rem 0;
 }
 
 .footerText a{
@@ -50,10 +66,16 @@ h3{
   text-align: center;
 }
 
-.openingCrawl{
+.premiseTitle{
+  font-size: 2.5rem;
+  margin-bottom: 0;
+}
+
+.premiseText{
   line-height: 3rem;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-weight: bold;
+  margin-top: 0;
   /* text-transform: uppercase; */
 }
 
@@ -115,7 +137,7 @@ button:focus{
 /* Footer */
 .footerText{
   font-size: 1.1rem;
-  margin: 5rem 0 2rem 0;
+  margin: 3rem 0 2rem 0;
 }
 
 .footerText a:hover,

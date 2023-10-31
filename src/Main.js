@@ -437,26 +437,30 @@ const Main = () => {
         </div>
         <section className="selectedEpisode">
           <div className="wrapper movieSection">
-            {/* movie info */}
-            {/* checks if movieObj is empty  */}
-            {movieObj.episode_id < 10 ? <h2>Episode: {selectedEpisode} </h2> : <p></p>}
-            {/* {movieObj.} */}
+            {/* checks if movieObj is a movie (episodes 1-9) or a show  */}
+            {movieObj.episode_id < 10 ? <h2 id="episodeNumber">Episode: {selectedEpisode} </h2> : <p></p>}
 
-            <h2>{movieObj.title}</h2>
-            <h3>{movieObj.release_date}</h3>
+            {/* Display movie/Show title and release date */}
+            <h2 id="title">{movieObj.title}</h2>
+            <h4 id="releaseDate">Released: {movieObj.release_date}</h4>
             
-            {movieObj.director ? <h3>Directed by: {movieObj.director}</h3> : <h3>Created by: {movieObj.creator}</h3>}
+            {/* Display director or creator */}
+            {movieObj.director ? <h3 class="directorCreator">Directed by: {movieObj.director}</h3> : <p></p>}
+            {movieObj.creator ? <h3 class="directorCreator">Created by: {movieObj.creator}</h3>: <p></p>}
             
+            {/* Display poster */}
             <div className="posterContainer">
               <a href={movieHref} target="_blank" rel="noreferrer">
-                {movieObj ? <img src={poster} alt={`poster for ${movieObj.title}`}/> : <p></p>}
+                {poster ? <img src={poster} alt={`poster for ${movieObj.title}`}/> : <p></p>}
               </a>
             </div>
             
-            {movieObj.opening_crawl ? <h3 className="openingCrawlText">Opening Crawl:</h3> : <h3>Description: </h3>}
-            
-            {/* <p className="openingCrawl">{movieObj.opening_crawl}</p> */}
-            {movieObj.opening_crawl ? <p className="openingCrawl">{movieObj.opening_crawl}</p> : <p className="openingCrawl">{movieObj.description}</p>}
+            {/* Display Opening crawl or description */}
+            {movieObj.opening_crawl ? <h3 className="premiseTitle">Opening Crawl:</h3> : <p></p>}
+            {movieObj.description ? <h3 className="premiseTitle">Description:</h3> : <p></p>}
+
+            {movieObj.opening_crawl ? <p className="premiseText">{movieObj.opening_crawl}</p> : <p></p>}
+            {movieObj.description ? <p className="premiseText">{movieObj.description}</p> : <p></p>}
           </div>
         </section>
       </section>
