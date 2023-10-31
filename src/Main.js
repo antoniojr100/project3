@@ -442,7 +442,7 @@ const Main = () => {
 
             {/* Display movie/Show title and release date */}
             <h2 id="title">{movieObj.title}</h2>
-            {movieObj ? <h4 id="releaseDate">Released: {movieObj.release_date}</h4> : <p id="noReleaseDate"></p>}
+            {movieObj.release_date ? <h4 id="releaseDate">Released: {movieObj.release_date}</h4> : <p id="noReleaseDate"></p>}
             
             {/* Display director or creator */}
             {movieObj.director ? <h3 class="directorCreator">Directed by: {movieObj.director}</h3> : <p></p>}
